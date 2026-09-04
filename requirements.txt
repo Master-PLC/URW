@@ -1,0 +1,80 @@
+# conda create -n uarm python=3.11
+# conda activate uarm
+
+###### Install Torch and FlashAttention ######
+# For Win/Linux: pip install torch==2.6.0+cu124 torchvision==0.21.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cu124
+# For MAC: pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --extra-index-url https://download.pytorch.org/whl/nightly/cpu
+# pip install ../pkgs/flash_attn-2.7.4.post1+cu12torch2.6cxx11abiFALSE-cp311-cp311-linux_x86_64.whl
+# pip install ../pkgs/flashinfer_python-0.2.2.post1+cu124torch2.6-cp38-abi3-linux_x86_64.whl
+
+###### Install auto_LiRPA ######
+# Install auto_LiRPA: git submodule add https://github.com/Verified-Intelligence/auto_LiRPA.git third_party/auto_LiRPA
+# Or update it in other machines: git submodule update --init --recursive
+# cd third_party/auto_LiRPA && pip install -e . && cd -
+
+###### Install NCP ######
+# Install NCP: git clone https://github.com/CSML-IIT-UCL/NCP.git third_party/NCP —————————— we have incorporated and modified it into ConformalRM
+# cd third_party/NCP && rm -rf .git && pip install -e . && cd -
+
+###### Install GNI-CP ######
+# Install GNI-CP: git clone https://github.com/Qualcomm-AI-research/newton-influence-conformal.git third_party/GNI_CP ——————————— we have incorporated and modified it into ConformalRM
+# cd third_party/GNI_CP && rm -rf .git && cd -
+
+###### Install LogSinkhornGPU ######
+# Install LogSinkhornGPU: git clone https://github.com/OTGroupGoe/LogSinkhornGPU.git third_party/LogSinkhornGPU ——————————— we have incorporated and modified it into ConformalRM
+# cd third_party/LogSinkhornGPU && rm -rf .git && pip install -e . --no-build-isolation && cd -
+
+# pip install -r requirements.txt
+
+accelerate
+aiohttp
+cleanlab[datalab]
+clear-uq
+codetiming
+curvlinops-for-pytorch>=2.0,<3.0
+datasets<4.0.0
+dill
+einops
+fastapi
+huggingface_hub>=0.20.0
+hydra-core
+ipykernel
+laplace_torch
+latex2sympy2_extended
+lightning
+# liger-kernel
+math_verify
+matplotlib
+nflows
+normflows
+notebook
+numpy<2.0.0
+openai
+packaging>=20.0
+pandas
+peft
+portion
+pot
+pre-commit
+pyarrow>=19.0.0
+pybind11
+pykeops
+pylatexenc
+pyyaml
+ray[default]==2.47.1
+safetensors
+scikit-learn
+scipy
+seaborn
+tensorboard
+tensordict>=0.8.0,<=0.10.0,!=0.9.0
+torchdata
+torchnaut
+torch-uncertainty
+transformers==4.55.4
+umap-learn
+uvicorn
+vbll
+vllm==0.8.5.post1
+wandb
+xgboost
