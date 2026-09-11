@@ -1,5 +1,5 @@
-# UARM
-Official implementation of "Uncertainty-Aware Reward Modeling for Stable RLHF"
+# URW
+Official implementation of "Rubrics Lack Uncertainty: Conformal Weighting for LLM Evaluation"
 
 ## Requirements
 
@@ -9,7 +9,7 @@ pip install -r requirements.txt
 
 ## Quick Start
 
-You can run the following command to train the UARM model.
+You can run the following command to train the URW model.
 
 ### Stage 1: Download preference data
 
@@ -49,4 +49,4 @@ python benchmark_cqr.py --data_name hs
 python benchmark_cqr.py --data_name hs --subset test
 ```
 
-This trains the UARM model on the binary-noisy data and evaluates it on the test set.
+This trains the URW model on the binary-noisy data and evaluates it on the test set.
