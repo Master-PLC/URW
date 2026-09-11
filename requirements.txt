@@ -1,80 +1,68 @@
-# conda create -n uarm python=3.11
-# conda activate uarm
+# conda create -n cr python=3.12
+# conda activate cr
 
-###### Install Torch and FlashAttention ######
-# For Win/Linux: pip install torch==2.6.0+cu124 torchvision==0.21.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cu124
-# For MAC: pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --extra-index-url https://download.pytorch.org/whl/nightly/cpu
-# pip install ../pkgs/flash_attn-2.7.4.post1+cu12torch2.6cxx11abiFALSE-cp311-cp311-linux_x86_64.whl
-# pip install ../pkgs/flashinfer_python-0.2.2.post1+cu124torch2.6-cp38-abi3-linux_x86_64.whl
-
-###### Install auto_LiRPA ######
-# Install auto_LiRPA: git submodule add https://github.com/Verified-Intelligence/auto_LiRPA.git third_party/auto_LiRPA
-# Or update it in other machines: git submodule update --init --recursive
-# cd third_party/auto_LiRPA && pip install -e . && cd -
-
-###### Install NCP ######
-# Install NCP: git clone https://github.com/CSML-IIT-UCL/NCP.git third_party/NCP —————————— we have incorporated and modified it into ConformalRM
-# cd third_party/NCP && rm -rf .git && pip install -e . && cd -
-
-###### Install GNI-CP ######
-# Install GNI-CP: git clone https://github.com/Qualcomm-AI-research/newton-influence-conformal.git third_party/GNI_CP ——————————— we have incorporated and modified it into ConformalRM
-# cd third_party/GNI_CP && rm -rf .git && cd -
-
-###### Install LogSinkhornGPU ######
-# Install LogSinkhornGPU: git clone https://github.com/OTGroupGoe/LogSinkhornGPU.git third_party/LogSinkhornGPU ——————————— we have incorporated and modified it into ConformalRM
-# cd third_party/LogSinkhornGPU && rm -rf .git && pip install -e . --no-build-isolation && cd -
+# pip install torch==2.8.0 torchvision==0.23.0 torchaudio==2.8.0 --index-url https://download.pytorch.org/whl/cu126
+# pip install --no-cache-dir --index-url https://pypi.org/simple vllm==0.11.0
+# pip install https://github.com/zipzou/flash-attention/releases/download/v2.8.3/flash_attn-2.8.3+cu12torch28cxx11abifalse-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl
+# pip install https://github.com/flashinfer-ai/flashinfer/releases/download/v0.2.5/flashinfer_python-0.2.5+cu126torch2.6-cp38-abi3-linux_x86_64.whl --no-deps
 
 # pip install -r requirements.txt
+# pip install clear-uq --no-deps --no-cache-dir
+# cd ../WeightedRubricRL && pip install --no-deps -e . && cd -
 
 accelerate
-aiohttp
-cleanlab[datalab]
-clear-uq
 codetiming
-curvlinops-for-pytorch>=2.0,<3.0
 datasets<4.0.0
 dill
 einops
 fastapi
+google-api-core
+google-auth
+httpx
 huggingface_hub>=0.20.0
 hydra-core
 ipykernel
-laplace_torch
+Jinja2
 latex2sympy2_extended
-lightning
-# liger-kernel
+liger-kernel
 math_verify
 matplotlib
+modelscope
 nflows
-normflows
-notebook
 numpy<2.0.0
+onnx==1.19.1
 openai
 packaging>=20.0
 pandas
 peft
-portion
 pot
 pre-commit
+progressbar
 pyarrow>=19.0.0
+pybase64
 pybind11
-pykeops
 pylatexenc
+pytest
+pytest-asyncio
+python-dotenv
 pyyaml
-ray[default]==2.47.1
+quantile_forest
+qwen-vl-utils==0.0.14
+ray[default]==2.48.0
 safetensors
 scikit-learn
 scipy
 seaborn
+sentencepiece
+setproctitle
 tensorboard
 tensordict>=0.8.0,<=0.10.0,!=0.9.0
 torchdata
-torchnaut
-torch-uncertainty
-transformers==4.55.4
-umap-learn
+transformers==4.57.1
+trl==0.24.0
 uvicorn
-vbll
-vllm==0.8.5.post1
 wandb
 xgboost
+xformers==0.0.32.post1
+xxhash
+zipp
